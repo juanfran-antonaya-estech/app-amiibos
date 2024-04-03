@@ -3,7 +3,8 @@ package com.juanfra.ddapp.model
 import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.juanfra.ddapp.model.data.GameSeries
+import com.juanfra.ddapp.model.data.gameserieinfo.GameSerie
+import com.juanfra.ddapp.model.data.gameserieinfo.GameSeries
 import java.io.IOException
 
 class Repositorio(val context: Context) {
@@ -27,12 +28,12 @@ class Repositorio(val context: Context) {
     }
     fun getCurrentFragmentName() = currentFragmentName
 
-    fun getAllGameseries() : ArrayList<GameSeries>? {
+    fun getAllGameseries() : ArrayList<GameSerie>? {
         val gson = Gson()
         val jsonString = getJsonFromFile(context, "gameseriesmock.json")
-        val typeToken = TypeToken.getParameterized(ArrayList::class.java, GameSeries::class.java).type
-        val gameSeriesList = gson.fromJson<ArrayList<GameSeries>>(jsonString, typeToken)
-        return gameSeriesList
+        val typeToken = TypeToken.getParameterized(GameSeries::class.java).type
+        val gameSeriesList = gson.fromJson<GameSeries>(jsonString, typeToken)
+        return gameSeriesList.gameSerie
     }
 
     fun getJsonFromFile(context: Context, fileName: String): String? {
