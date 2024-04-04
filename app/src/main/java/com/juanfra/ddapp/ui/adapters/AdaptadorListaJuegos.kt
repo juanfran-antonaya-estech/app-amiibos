@@ -24,6 +24,11 @@ class AdaptadorListaJuegos (val listado: ArrayList<GameSerie>) : RecyclerView.Ad
         val serie = listado[position]
 
         holder.binding.tvSerie.text = serie.name
-        holder.binding.tvCode.text = serie.key
+        if (serie.key!!.contains(',')){
+            holder.binding.tvCode.text = "${serie.key!!.split(',').size.toString()} Subseries"
+        } else {
+            holder.binding.tvCode.text = serie.key
+        }
+
     }
 }
