@@ -3,14 +3,30 @@ package com.juanfra.ddapp.model
 import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.juanfra.ddapp.model.data.gameserieinfo.Amiibo
+import com.juanfra.ddapp.model.data.gameserieinfo.Amiibos
 import com.juanfra.ddapp.model.data.gameserieinfo.GameSerie
 import com.juanfra.ddapp.model.data.gameserieinfo.GameSeries
 import java.io.IOException
 
 class Repositorio(val context: Context) {
 
-    private lateinit var currentFragmentName: String
+    private var currentFragmentName: String = "Pamplona"
     private var currentPage: Int = 0
+    private var currentGameSeriesList = getAllGameseries()
+    private var currentAmiiboList = arrayListOf<Amiibo>()
+
+    fun setCurrentGameSerieList(array: ArrayList<GameSerie>) {
+        currentGameSeriesList = array
+    }
+
+    fun setDefaultList() {
+        currentGameSeriesList = getAllGameseries()
+    }
+
+    fun getCurrentGameSerieList() : ArrayList<GameSerie> {
+        return currentGameSeriesList!!
+    }
     
     fun setCurrentPage (number: Int) {
         currentPage = number
@@ -76,6 +92,18 @@ class Repositorio(val context: Context) {
             return null
         }
         return jsonString
+    }
+
+    fun setAmiiboList(key: String) {
+
+    }
+
+    fun getAmiiboList(): ArrayList<Amiibo>? {
+        val gson = Gson()
+        val jsonString = getJsonFromFile(context, "acserie.json")
+        val typeToken = TypeToken.getParameterized(Amiibos::class.java).type
+        val amiiboList = gson.fromJson<Amiibos>(jsonString, typeToken)
+        return amiiboList.amiibo
     }
 
 }
