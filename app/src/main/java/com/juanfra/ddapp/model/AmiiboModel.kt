@@ -72,6 +72,10 @@ class AmiiboModel() : ViewModel() {
         amiiboListLiveData.value = repo.getAmiiboList()
     }
 
+    fun getAmiiboList(): MutableLiveData<ArrayList<Amiibo>> {
+        return amiiboListLiveData
+    }
+
 
     class AmiiboFactory(private val context: Context) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
