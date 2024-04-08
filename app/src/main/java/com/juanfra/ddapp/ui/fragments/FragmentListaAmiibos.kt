@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.juanfra.ddapp.databinding.FragmentListaAmiibosBinding
 import com.juanfra.ddapp.model.AmiiboModel
 import com.juanfra.ddapp.model.data.gameserieinfo.Amiibo
@@ -35,9 +36,9 @@ class FragmentListaAmiibos : Fragment() {
     }
 
     private fun updateAdapter(amiibos: ArrayList<Amiibo>?) {
-        val adaptador = AdaptadorListaAmiibos(amiibos!!)
+        val adaptador = AdaptadorListaAmiibos(ArrayList(amiibos!!.sortedBy { it.name }))
         adaptador.updateData()
-        val layoutManager = GridLayoutManager(requireContext(), 2)
+        val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         binding.rvListaAmiibos.adapter = adaptador
         binding.rvListaAmiibos.layoutManager = layoutManager
         adaptador.updateData()
