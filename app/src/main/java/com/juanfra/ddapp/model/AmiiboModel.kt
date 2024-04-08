@@ -73,6 +73,7 @@ class AmiiboModel() : ViewModel() {
     }
 
     fun getAmiiboList(): MutableLiveData<ArrayList<Amiibo>> {
+        updateAmiiboList()
         return amiiboListLiveData
     }
 

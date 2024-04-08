@@ -3,6 +3,7 @@ package com.juanfra.ddapp.ui.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.juanfra.ddapp.databinding.HolderAmiiboBinding
 import com.juanfra.ddapp.model.data.gameserieinfo.Amiibo
 
@@ -21,5 +22,14 @@ class AdaptadorListaAmiibos(var listado: ArrayList<Amiibo>) : RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: CeldaAmiibo, position: Int) {
         val amiibo = listado[position]
+
+        holder.binding.tvNombreAmiiboLista.text = amiibo.name
+        Glide.with(holder.itemView)
+            .load(amiibo.image)
+            .into(holder.binding.ivImagenAmiiboLista)
+    }
+
+    fun updateData() {
+        notifyDataSetChanged()
     }
 }

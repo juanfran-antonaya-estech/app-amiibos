@@ -47,6 +47,7 @@ class AdaptadorListaJuegos (val listado: ArrayList<GameSerie>) : RecyclerView.Ad
                     n++
                 }
                 viewModel.setList(arrayDeGameSerie)
+                viewModel.setFragmentName("Lista de subseries de ${serie.name}")
             }
         } else {
             holder.binding.tvCode.text = serie.key

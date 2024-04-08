@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import com.juanfra.ddapp.R
 import com.juanfra.ddapp.databinding.FragmentListaAmiibosBinding
 import com.juanfra.ddapp.model.AmiiboModel
 import com.juanfra.ddapp.model.data.gameserieinfo.Amiibo
@@ -23,6 +22,13 @@ class FragmentListaAmiibos : Fragment() {
         binding = FragmentListaAmiibosBinding.inflate(layoutInflater)
         return binding.root
 
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.setFragmentName("Lista de amiibos")
+
         viewModel.getAmiiboList().observe(requireActivity(),{ amiibos ->
             updateAdapter(amiibos)
         })
@@ -30,9 +36,11 @@ class FragmentListaAmiibos : Fragment() {
 
     private fun updateAdapter(amiibos: ArrayList<Amiibo>?) {
         val adaptador = AdaptadorListaAmiibos(amiibos!!)
+        adaptador.updateData()
         val layoutManager = GridLayoutManager(requireContext(), 2)
         binding.rvListaAmiibos.adapter = adaptador
         binding.rvListaAmiibos.layoutManager = layoutManager
+        adaptador.updateData()
     }
 
     companion object {

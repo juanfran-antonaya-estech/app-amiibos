@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         binding.vp2.adapter = adaptador
         binding.btListaJuegos.setOnClickListener{
             binding.vp2.currentItem = 0
+            viewModel.setFragmentName("Lista de series de amiibos")
             viewModel.setDefaultList()
         }
 
