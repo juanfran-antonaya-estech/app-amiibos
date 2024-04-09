@@ -1,12 +1,19 @@
 package com.juanfra.ddapp.model
 
 import android.content.Context
+import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.juanfra.ddapp.apicalls.ApiClient
 import com.juanfra.ddapp.model.data.gameserieinfo.Amiibo
 import com.juanfra.ddapp.model.data.gameserieinfo.Amiibos
 import com.juanfra.ddapp.model.data.gameserieinfo.GameSerie
 import com.juanfra.ddapp.model.data.gameserieinfo.GameSeries
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
 
 class Repositorio(val context: Context) {
@@ -99,15 +106,15 @@ class Repositorio(val context: Context) {
         val gson = Gson()
         val jsonString = getJsonFromFile(context, "acserie.json")
         val typeToken = TypeToken.getParameterized(Amiibos::class.java).type
-        val amiiboList = gson.fromJson<Amiibos>(jsonString, typeToken)
-        currentAmiiboList = amiiboList.amiibo
+        val amiiboList = llamaraEndpoint(key)
+        currentAmiiboList = amiiboList
     }
 
     fun getAmiiboList(): ArrayList<Amiibo>? {
         return ArrayList(currentAmiiboList.sortedBy { it.name }.sortedBy { it.type })
     }
     fun getAmiiboList(key: String): ArrayList<Amiibo>? {
-        return getAmiiboList()
+        return llamaraEndpoint(key)
     }
 
     fun getAmiibo(): Amiibo? {
@@ -121,6 +128,31 @@ class Repositorio(val context: Context) {
 
     fun setAmiiboList(amiiboList: ArrayList<Amiibo>) {
         currentAmiiboList = amiiboList
+    }
+
+    fun llamaraEndpoint(endpoint: String): ArrayList<Amiibo> {
+        val postId = 1 // Replace with the desired post ID
+        val call = ApiClient.apiService.getPostById(endpoint)
+        var resultado = ArrayList<Amiibo>()
+
+        call.enqueue(object : Callback<Amiibos> {
+            override fun onResponse(call: Call<Amiibos>, response: Response<Amiibos>) {
+                if (response.isSuccessful) {
+                    val post = response.body()
+                    resultado = post!!.amiibo
+                    Log.d("el objeto", resultado.toString())
+                    // Handle the retrieved post data
+                } else {
+                    Log.d("call", "no ha funsionao")
+                }
+            }
+
+            override fun onFailure(call: Call<Amiibos>, t: Throwable) {
+                // Handle failure
+            }
+        })
+
+        return resultado
     }
 
 }
