@@ -103,18 +103,21 @@ class Repositorio(val context: Context) {
     }
 
     fun setAmiiboList(key: String) {
-        val gson = Gson()
-        val jsonString = getJsonFromFile(context, "acserie.json")
-        val typeToken = TypeToken.getParameterized(Amiibos::class.java).type
         val amiiboList = llamaraEndpoint(key)
+        Log.d("lista de amigos", amiiboList.toString())
         currentAmiiboList = amiiboList
+    }
+    fun setAmiiboList(amiiboList: ArrayList<Amiibo>) {
+        this.currentAmiiboList = amiiboList
     }
 
     fun getAmiiboList(): ArrayList<Amiibo>? {
         return ArrayList(currentAmiiboList.sortedBy { it.name }.sortedBy { it.type })
     }
     fun getAmiiboList(key: String): ArrayList<Amiibo>? {
-        return llamaraEndpoint(key)
+        llamaraEndpoint(key)
+        Log.d("la basura", currentAmiiboList.toString())
+        return currentAmiiboList
     }
 
     fun getAmiibo(): Amiibo? {
@@ -126,21 +129,19 @@ class Repositorio(val context: Context) {
     }
 
 
-    fun setAmiiboList(amiiboList: ArrayList<Amiibo>) {
-        currentAmiiboList = amiiboList
-    }
 
     fun llamaraEndpoint(endpoint: String): ArrayList<Amiibo> {
         val postId = 1 // Replace with the desired post ID
+        val resultado = ArrayList<Amiibo>()
         val call = ApiClient.apiService.getPostById(endpoint)
-        var resultado = ArrayList<Amiibo>()
 
         call.enqueue(object : Callback<Amiibos> {
             override fun onResponse(call: Call<Amiibos>, response: Response<Amiibos>) {
                 if (response.isSuccessful) {
                     val post = response.body()
-                    resultado = post!!.amiibo
-                    Log.d("el objeto", resultado.toString())
+                    for (i in post!!.amiibo) {
+                        resultado.add(i)
+                    }
                     // Handle the retrieved post data
                 } else {
                     Log.d("call", "no ha funsionao")
@@ -151,7 +152,7 @@ class Repositorio(val context: Context) {
                 // Handle failure
             }
         })
-
+        Log.d("el objeto", resultado.toString())
         return resultado
     }
 
