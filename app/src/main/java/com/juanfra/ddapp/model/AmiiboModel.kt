@@ -1,6 +1,7 @@
 package com.juanfra.ddapp.model
 
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,6 +15,7 @@ class AmiiboModel() : ViewModel() {
     private val actualPageLiveData: MutableLiveData<Int> = MutableLiveData<Int>()
     private val currentFragmentNameLiveData: MutableLiveData<String> = MutableLiveData<String>()
     private val amiiboListLiveData: MutableLiveData<ArrayList<Amiibo>> = MutableLiveData<ArrayList<Amiibo>>()
+    private val amiiboLiveData: MutableLiveData<Amiibo> = MutableLiveData<Amiibo>()
 
     fun getGameSerieList(): LiveData<ArrayList<GameSerie>> {
         return seriesLiveData
@@ -67,6 +69,18 @@ class AmiiboModel() : ViewModel() {
         repo.setAmiiboList(key)
         updateAmiiboList()
     }
+    fun setAmiiboListFromMultipleKeys(keylist: List<String>) {
+        var amiiboarray = ArrayList<Amiibo>()
+        for(key in keylist){
+            for (amiibo in repo.getAmiiboList(key)!!){
+                amiiboarray.add(amiibo)
+                Log.d("amiibo", amiibo.toString())
+                Log.d("key", key)
+            }
+        }
+        repo.setAmiiboList(amiiboarray)
+        updateAmiiboList()
+    }
 
     private fun updateAmiiboList() {
         amiiboListLiveData.value = repo.getAmiiboList()
@@ -76,6 +90,21 @@ class AmiiboModel() : ViewModel() {
         updateAmiiboList()
         return amiiboListLiveData
     }
+
+    fun setAmiibo(amiibo: Amiibo) {
+        repo.setAmiibo(amiibo)
+        updateAmiibo()
+    }
+
+    private fun updateAmiibo() {
+        amiiboLiveData.value = repo.getAmiibo();
+    }
+
+    fun getAmiibo(): MutableLiveData<Amiibo>{
+        updateAmiibo()
+        return amiiboLiveData
+    }
+
 
 
     class AmiiboFactory(private val context: Context) : ViewModelProvider.Factory {

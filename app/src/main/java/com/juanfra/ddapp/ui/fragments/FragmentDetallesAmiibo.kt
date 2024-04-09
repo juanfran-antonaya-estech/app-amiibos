@@ -1,42 +1,118 @@
 package com.juanfra.ddapp.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.juanfra.ddapp.R
+import com.juanfra.ddapp.databinding.FragmentDetallesAmiiboBinding
 import com.juanfra.ddapp.model.AmiiboModel
+import com.juanfra.ddapp.model.data.gameserieinfo.Amiibo
+import com.juanfra.ddapp.model.data.gameserieinfo.Games3DS
+import com.juanfra.ddapp.model.data.gameserieinfo.GamesSwitch
+import com.juanfra.ddapp.model.data.gameserieinfo.GamesWiiU
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FragmentDetallesAmiibo.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FragmentDetallesAmiibo : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentDetallesAmiiboBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detalles_amiibo, container, false)
+        binding = FragmentDetallesAmiiboBinding.inflate(layoutInflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.getAmiibo().observe(requireActivity()){
+            fillAmiiboData(it)
+        }
+    }
+
+    private fun fillAmiiboData(amiibo: Amiibo) {
+        Glide.with(this)
+            .load(amiibo.image).placeholder(R.drawable.amiibonotfound)
+            .into(binding.ivFotoAmiibo)
+
+        binding.tvAmiiboName.text = amiibo.name
+        with(binding.vllAmiiboAttributes){
+            this.removeAllViews()
+            addView(addKeyAndValueSingle("Series", amiibo.amiiboSeries))
+            addView(addKeyAndValueSingle("Serie de videojuegos", amiibo.gameSeries))
+            addView(addKeyAndValueSingle("Personaje", amiibo.character))
+            addView(addKeyAndValueSingle("Tipo de amiibo", amiibo.type))
+            addView(addKeyAndValueSingle("Head", amiibo.head))
+            addView(addKeyAndValueSingle("Tail", amiibo.tail))
+        }
+
+        fill3dsUses(binding.vll3dsUses, amiibo.games3DS)
+        fillWUUses(binding.vllWUUses, amiibo.gamesWiiU)
+        fillSwitchUses(binding.vllSwitchUses, amiibo.gamesSwitch)
+    }
+
+    private fun fillSwitchUses(vll: LinearLayout, games: ArrayList<GamesSwitch>) {
+        vll.removeAllViews()
+        for (game in games) {
+            vll.addView(addKeyAndValueSingle(game.gameName, game.amiiboUsage[0].Usage?.replace(" / ", "\n")))
+        }
+    }
+
+    private fun fill3dsUses(vll: LinearLayout, games: ArrayList<Games3DS>) {
+        vll.removeAllViews()
+        for (game in games) {
+            vll.addView(addKeyAndValueSingle(game.gameName, game.amiiboUsage[0].Usage?.replace(" / ", "\n")))
+        }
+    }
+
+    private fun fillWUUses(vll: LinearLayout, games: ArrayList<GamesWiiU>) {
+        vll.removeAllViews()
+        for (game in games) {
+            vll.addView(addKeyAndValueSingle(game.gameName, game.amiiboUsage[0].Usage?.replace(" / ", "\n")))
+        }
+    }
+
+    private fun addKeyAndValueSingle(key: String?, value: String?): View? {
+        val hll = LinearLayout(this.context)
+        hll.setLayoutParams(
+            LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+        )
+        hll.orientation = LinearLayout.HORIZONTAL
+        hll.addView(addTextview(key))
+        hll.addView(addTextviewToLeft(value))
+        hll.setPadding(40,20,40,20)
+
+        return hll
+    }
+
+    private fun addTextviewToLeft(text: String?): View? {
+        val tv = addTextview(text)
+        tv?.textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
+        return tv
+    }
+
+    private fun addTextview(text: String?): View? {
+        val tv = TextView(requireContext())
+        tv.text = text
+        tv.setLayoutParams(
+            LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                1F
+            )
+        )
+        tv.textSize = 18F
+
+        return tv
     }
 
     companion object {

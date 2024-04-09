@@ -15,6 +15,7 @@ class Repositorio(val context: Context) {
     private var currentPage: Int = 0
     private var currentGameSeriesList = getAllGameseries()
     private var currentAmiiboList = arrayListOf<Amiibo>()
+    private var currentAmiibo = Amiibo()
 
     fun setCurrentGameSerieList(array: ArrayList<GameSerie>) {
         currentGameSeriesList = array
@@ -95,15 +96,31 @@ class Repositorio(val context: Context) {
     }
 
     fun setAmiiboList(key: String) {
-
-    }
-
-    fun getAmiiboList(): ArrayList<Amiibo>? {
         val gson = Gson()
         val jsonString = getJsonFromFile(context, "acserie.json")
         val typeToken = TypeToken.getParameterized(Amiibos::class.java).type
         val amiiboList = gson.fromJson<Amiibos>(jsonString, typeToken)
-        return amiiboList.amiibo
+        currentAmiiboList = amiiboList.amiibo
+    }
+
+    fun getAmiiboList(): ArrayList<Amiibo>? {
+        return ArrayList(currentAmiiboList.sortedBy { it.name }.sortedBy { it.type })
+    }
+    fun getAmiiboList(key: String): ArrayList<Amiibo>? {
+        return getAmiiboList()
+    }
+
+    fun getAmiibo(): Amiibo? {
+        return currentAmiibo
+    }
+
+    fun setAmiibo(amiibo: Amiibo) {
+        currentAmiibo = amiibo
+    }
+
+
+    fun setAmiiboList(amiiboList: ArrayList<Amiibo>) {
+        currentAmiiboList = amiiboList
     }
 
 }

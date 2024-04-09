@@ -39,15 +39,16 @@ class AdaptadorListaJuegos (val listado: ArrayList<GameSerie>) : RecyclerView.Ad
         if (serie.key!!.contains(',')){
             holder.binding.tvCode.text = "${serie.key!!.split(',').size.toString()} Subseries"
             holder.itemView.setOnClickListener{
-                var arraydekeys = serie.key!!.split(',')
+                /*var arraydekeys = serie.key!!.split(',')
                 var arrayDeGameSerie = arrayListOf<GameSerie>()
                 var n = 1
                 for (i in arraydekeys) {
                     arrayDeGameSerie.add(GameSerie(i, "${serie.name}, serie ${n}"))
                     n++
-                }
-                viewModel.setList(arrayDeGameSerie)
-                viewModel.setFragmentName("Lista de subseries de ${serie.name}")
+                }*/
+
+                viewModel.setAmiiboListFromMultipleKeys(serie.key!!.split(','))
+                viewModel.setPage(1)
             }
         } else {
             holder.binding.tvCode.text = serie.key

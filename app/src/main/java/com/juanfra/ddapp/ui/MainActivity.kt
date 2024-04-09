@@ -1,17 +1,11 @@
 package com.juanfra.ddapp.ui
 
 import android.os.Bundle
-import android.view.DragEvent
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
-import com.juanfra.ddapp.R
 import com.juanfra.ddapp.databinding.ActivityMainBinding
-import com.juanfra.ddapp.databinding.FragmentListaJuegosBinding
 import com.juanfra.ddapp.model.AmiiboModel
-import com.juanfra.ddapp.ui.adapters.TutorialAdapter2
+import com.juanfra.ddapp.ui.adapters.AdaptadorViewPager
 import com.juanfra.ddapp.ui.fragments.FragmentDetallesAmiibo
 import com.juanfra.ddapp.ui.fragments.FragmentListaAmiibos
 import com.juanfra.ddapp.ui.fragments.FragmentListaJuegos
@@ -32,8 +26,8 @@ class MainActivity : AppCompatActivity() {
         FragmentListaAmiibos.viewModel = viewModel
         FragmentDetallesAmiibo.viewModel = viewModel
 
-        val fragments = arrayListOf(FragmentListaJuegos(), FragmentListaAmiibos(), FragmentListaJuegos())
-        val adaptador = TutorialAdapter2(this, fragments)
+        val fragments = arrayListOf(FragmentListaJuegos(), FragmentListaAmiibos(), FragmentDetallesAmiibo())
+        val adaptador = AdaptadorViewPager(this, fragments)
 
         binding.vp2.adapter = adaptador
         binding.btListaJuegos.setOnClickListener{

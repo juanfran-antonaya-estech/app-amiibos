@@ -1,420 +1,767 @@
 {
   "amiibo": [
     {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Zelda",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01010300",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01010300-04140902.png",
-      "name": "Zelda & Loftwing",
+      "amiiboSeries": "Animal Crossing",
+      "character": "Bangle",
+      "gameSeries": "Animal Crossing",
+      "games3DS": [
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Call on amiibo phone to design the character's home on demand / Store house design and furniture for sharing",
+              "write": true
+            }
+          ],
+          "gameID": [
+            "000400000014F100",
+            "000400000014F200"
+          ],
+          "gameName": "Animal Crossing: Happy Home Designer"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Give Kirby a Copy ability based on the character's abilities and a health item",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "0004000000189600",
+            "0004000000183600",
+            "0004000000189800"
+          ],
+          "gameName": "Kirby: Planet Robobot"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock an Animal Crossing pattern",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "00040000001C2500"
+          ],
+          "gameName": "Style Savvy: Styling Star"
+        }
+      ],
+      "gamesSwitch": [
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Invite the character to your campsite and, eventually, to move to your island / Invite the character for photo shoots at Photopia / Unlock a special poster of the character / Invite the character to the Roost for a cup of coffee / Invite the character to Happy Home Paradise to design their vacation home",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "01006F8002326000"
+          ],
+          "gameName": "Animal Crossing: New Horizons"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock a special costume",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "01007EF00399C000"
+          ],
+          "gameName": "Conga Master Party!"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock an Animal Crossing-themed Mii racing suit",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "0100152000022000"
+          ],
+          "gameName": "Mario Kart 8 Deluxe"
+        }
+      ],
+      "gamesWiiU": [
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Use the character in mini-games",
+              "write": false
+            },
+            {
+              "Usage": "Place the character's house on the game board",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "00050000101C6500",
+            "0005000010190100",
+            "00050000101C6400"
+          ],
+          "gameName": "Animal Crossing: amiibo Festival"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock music, frames, and figures",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "00050000101D3000"
+          ],
+          "gameName": "Taiko Drum Master: Atsumete Tomodachi Daisakusen"
+        }
+      ],
+      "head": "04fd0001",
+      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_04fd0001-007b0502.png",
+      "name": "Bangle",
       "release": {
-        "au": "2021-07-16",
-        "eu": "2021-07-16",
-        "jp": "2021-07-16",
-        "na": "2021-07-16"
+        "au": "2015-10-03",
+        "eu": "2015-10-02",
+        "jp": "2015-07-30",
+        "na": "2015-09-25"
       },
-      "tail": "04140902",
-      "type": "Figure"
+      "tail": "007b0502",
+      "type": "Card"
     },
     {
-      "amiiboSeries": "Super Smash Bros.",
-      "character": "Link",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01000000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01000000-00040002.png",
-      "name": "Link",
+      "amiiboSeries": "Animal Crossing",
+      "character": "Claudia",
+      "gameSeries": "Animal Crossing",
+      "games3DS": [
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Call on amiibo phone to design the character's home on demand / Store house design and furniture for sharing",
+              "write": true
+            }
+          ],
+          "gameID": [
+            "000400000014F100",
+            "000400000014F200"
+          ],
+          "gameName": "Animal Crossing: Happy Home Designer"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Invite the character to give you an item or move to your town",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "0004000000086400",
+            "0004000000086300",
+            "0004000000198F00",
+            "0004000000198E00"
+          ],
+          "gameName": "Animal Crossing: New Leaf"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Give Kirby a Copy ability based on the character's abilities and a health item",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "0004000000189600",
+            "0004000000183600",
+            "0004000000189800"
+          ],
+          "gameName": "Kirby: Planet Robobot"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock an Animal Crossing pattern",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "00040000001C2500"
+          ],
+          "gameName": "Style Savvy: Styling Star"
+        }
+      ],
+      "gamesSwitch": [
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Invite the character to your campsite and, eventually, to move to your island / Invite the character for photo shoots at Photopia / Unlock a special poster of the character / Invite the character to the Roost for a cup of coffee / Invite the character to Happy Home Paradise to design their vacation home",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "01006F8002326000"
+          ],
+          "gameName": "Animal Crossing: New Horizons"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock a special costume",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "01007EF00399C000"
+          ],
+          "gameName": "Conga Master Party!"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock an Animal Crossing-themed Mii racing suit",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "0100152000022000"
+          ],
+          "gameName": "Mario Kart 8 Deluxe"
+        }
+      ],
+      "gamesWiiU": [
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Use the character in mini-games",
+              "write": false
+            },
+            {
+              "Usage": "Place the character's house on the game board",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "00050000101C6500",
+            "0005000010190100",
+            "00050000101C6400"
+          ],
+          "gameName": "Animal Crossing: amiibo Festival"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock music, frames, and figures",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "00050000101D3000"
+          ],
+          "gameName": "Taiko Drum Master: Atsumete Tomodachi Daisakusen"
+        }
+      ],
+      "head": "04ff0001",
+      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_04ff0001-01620502.png",
+      "name": "Claudia",
       "release": {
-        "au": "2014-11-29",
-        "eu": "2014-11-28",
-        "jp": "2014-12-06",
-        "na": "2014-11-21"
+        "au": "2016-03-19",
+        "eu": "2016-03-18",
+        "jp": "2016-01-14",
+        "na": "2016-03-18"
       },
-      "tail": "00040002",
-      "type": "Figure"
+      "tail": "01620502",
+      "type": "Card"
     },
     {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Link",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01000000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01000000-03530902.png",
-      "name": "Link - Archer",
+      "amiiboSeries": "Animal Crossing",
+      "character": "Rowan",
+      "gameSeries": "Animal Crossing",
+      "games3DS": [
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Call on amiibo phone to design the character's home on demand / Store house design and furniture for sharing",
+              "write": true
+            }
+          ],
+          "gameID": [
+            "000400000014F100",
+            "000400000014F200"
+          ],
+          "gameName": "Animal Crossing: Happy Home Designer"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Invite the character to give you an item or move to your town",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "0004000000086400",
+            "0004000000086300",
+            "0004000000198F00",
+            "0004000000198E00"
+          ],
+          "gameName": "Animal Crossing: New Leaf"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Give Kirby a Copy ability based on the character's abilities and a health item",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "0004000000189600",
+            "0004000000183600",
+            "0004000000189800"
+          ],
+          "gameName": "Kirby: Planet Robobot"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock an Animal Crossing pattern",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "00040000001C2500"
+          ],
+          "gameName": "Style Savvy: Styling Star"
+        }
+      ],
+      "gamesSwitch": [
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Invite the character to your campsite and, eventually, to move to your island / Invite the character for photo shoots at Photopia / Unlock a special poster of the character / Invite the character to the Roost for a cup of coffee / Invite the character to Happy Home Paradise to design their vacation home",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "01006F8002326000"
+          ],
+          "gameName": "Animal Crossing: New Horizons"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock a special costume",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "01007EF00399C000"
+          ],
+          "gameName": "Conga Master Party!"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock an Animal Crossing-themed Mii racing suit",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "0100152000022000"
+          ],
+          "gameName": "Mario Kart 8 Deluxe"
+        }
+      ],
+      "gamesWiiU": [
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Use the character in mini-games",
+              "write": false
+            },
+            {
+              "Usage": "Place the character's house on the game board",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "00050000101C6500",
+            "0005000010190100",
+            "00050000101C6400"
+          ],
+          "gameName": "Animal Crossing: amiibo Festival"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock music, frames, and figures",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "00050000101D3000"
+          ],
+          "gameName": "Taiko Drum Master: Atsumete Tomodachi Daisakusen"
+        }
+      ],
+      "head": "04fb0001",
+      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_04fb0001-01c60502.png",
+      "name": "Rowan",
       "release": {
-        "au": "2017-03-03",
-        "eu": "2017-03-03",
-        "jp": "2017-03-03",
-        "na": "2017-03-03"
+        "au": "2016-06-18",
+        "eu": null,
+        "jp": "2016-03-24",
+        "na": "2016-06-10"
       },
-      "tail": "03530902",
-      "type": "Figure"
+      "tail": "01c60502",
+      "type": "Card"
     },
     {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Link",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01000000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01000000-034f0902.png",
-      "name": "8-Bit Link",
+      "amiiboSeries": "Animal Crossing",
+      "character": "Tybalt",
+      "gameSeries": "Animal Crossing",
+      "games3DS": [
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Invite the character to visit your RV campsite, give you an item, and/or move to your town",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "0004000000086400",
+            "0004000000086300",
+            "0004000000198F00",
+            "0004000000198E00"
+          ],
+          "gameName": "Animal Crossing: New Leaf"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Give Kirby a Copy ability based on the character's abilities and a health item",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "0004000000189600",
+            "0004000000183600",
+            "0004000000189800"
+          ],
+          "gameName": "Kirby: Planet Robobot"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock an Animal Crossing pattern",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "00040000001C2500"
+          ],
+          "gameName": "Style Savvy: Styling Star"
+        }
+      ],
+      "gamesSwitch": [
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Invite the character to your campsite and, eventually, to move to your island / Invite the character for photo shoots at Photopia / Unlock a special poster of the character / Invite the character to the Roost for a cup of coffee / Invite the character to Happy Home Paradise to design their vacation home",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "01006F8002326000"
+          ],
+          "gameName": "Animal Crossing: New Horizons"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock a special costume",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "01007EF00399C000"
+          ],
+          "gameName": "Conga Master Party!"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock an Animal Crossing-themed Mii racing suit",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "0100152000022000"
+          ],
+          "gameName": "Mario Kart 8 Deluxe"
+        }
+      ],
+      "gamesWiiU": [],
+      "head": "04fc0001",
+      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_04fc0001-02ee0502.png",
+      "name": "Tybalt",
       "release": {
-        "au": "2016-12-03",
-        "eu": "2016-12-02",
-        "jp": "2016-12-01",
+        "au": "2016-11-10",
+        "eu": "2016-11-11",
+        "jp": "2016-11-03",
         "na": "2016-12-02"
       },
-      "tail": "034f0902",
-      "type": "Figure"
+      "tail": "02ee0502",
+      "type": "Card"
     },
     {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Link",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01000000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01000000-03540902.png",
-      "name": "Link - Rider",
+      "amiiboSeries": "Animal Crossing",
+      "character": "Rolf",
+      "gameSeries": "Animal Crossing",
+      "games3DS": [
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Call on amiibo phone to design the character's home on demand / Store house design and furniture for sharing",
+              "write": true
+            }
+          ],
+          "gameID": [
+            "000400000014F100",
+            "000400000014F200"
+          ],
+          "gameName": "Animal Crossing: Happy Home Designer"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Give Kirby a Copy ability based on the character's abilities and a health item",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "0004000000189600",
+            "0004000000183600",
+            "0004000000189800"
+          ],
+          "gameName": "Kirby: Planet Robobot"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock an Animal Crossing pattern",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "00040000001C2500"
+          ],
+          "gameName": "Style Savvy: Styling Star"
+        }
+      ],
+      "gamesSwitch": [
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Invite the character to your campsite and, eventually, to move to your island / Invite the character for photo shoots at Photopia / Unlock a special poster of the character / Invite the character to the Roost for a cup of coffee / Invite the character to Happy Home Paradise to design their vacation home",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "01006F8002326000"
+          ],
+          "gameName": "Animal Crossing: New Horizons"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock a special costume",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "01007EF00399C000"
+          ],
+          "gameName": "Conga Master Party!"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock an Animal Crossing-themed Mii racing suit",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "0100152000022000"
+          ],
+          "gameName": "Mario Kart 8 Deluxe"
+        }
+      ],
+      "gamesWiiU": [
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Use the character in mini-games",
+              "write": false
+            },
+            {
+              "Usage": "Place the character's house on the game board",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "00050000101C6500",
+            "0005000010190100",
+            "00050000101C6400"
+          ],
+          "gameName": "Animal Crossing: amiibo Festival"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock music, frames, and figures",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "00050000101D3000"
+          ],
+          "gameName": "Taiko Drum Master: Atsumete Tomodachi Daisakusen"
+        }
+      ],
+      "head": "04fa0001",
+      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_04fa0001-01680502.png",
+      "name": "Rolf",
       "release": {
-        "au": "2017-03-03",
-        "eu": "2017-03-03",
-        "jp": "2017-03-03",
-        "na": "2017-03-03"
+        "au": "2016-03-19",
+        "eu": "2016-03-18",
+        "jp": "2016-01-14",
+        "na": "2016-03-18"
       },
-      "tail": "03540902",
-      "type": "Figure"
+      "tail": "01680502",
+      "type": "Card"
     },
     {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Link",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01000100",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01000100-03500902.png",
-      "name": "Toon Link - The Wind Waker",
+      "amiiboSeries": "Animal Crossing",
+      "character": "Leonardo",
+      "gameSeries": "Animal Crossing",
+      "games3DS": [
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Call on amiibo phone to design the character's home on demand / Store house design and furniture for sharing",
+              "write": true
+            }
+          ],
+          "gameID": [
+            "000400000014F100",
+            "000400000014F200"
+          ],
+          "gameName": "Animal Crossing: Happy Home Designer"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Give Kirby a Copy ability based on the character's abilities and a health item",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "0004000000189600",
+            "0004000000183600",
+            "0004000000189800"
+          ],
+          "gameName": "Kirby: Planet Robobot"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock an Animal Crossing pattern",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "00040000001C2500"
+          ],
+          "gameName": "Style Savvy: Styling Star"
+        }
+      ],
+      "gamesSwitch": [
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Invite the character to your campsite and, eventually, to move to your island / Invite the character for photo shoots at Photopia / Unlock a special poster of the character / Invite the character to the Roost for a cup of coffee / Invite the character to Happy Home Paradise to design their vacation home",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "01006F8002326000"
+          ],
+          "gameName": "Animal Crossing: New Horizons"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock a special costume",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "01007EF00399C000"
+          ],
+          "gameName": "Conga Master Party!"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock an Animal Crossing-themed Mii racing suit",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "0100152000022000"
+          ],
+          "gameName": "Mario Kart 8 Deluxe"
+        }
+      ],
+      "gamesWiiU": [
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Use the character in mini-games",
+              "write": false
+            },
+            {
+              "Usage": "Place the character's house on the game board",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "00050000101C6500",
+            "0005000010190100",
+            "00050000101C6400"
+          ],
+          "gameName": "Animal Crossing: amiibo Festival"
+        },
+        {
+          "amiiboUsage": [
+            {
+              "Usage": "Unlock music, frames, and figures",
+              "write": false
+            }
+          ],
+          "gameID": [
+            "00050000101D3000"
+          ],
+          "gameName": "Taiko Drum Master: Atsumete Tomodachi Daisakusen"
+        }
+      ],
+      "head": "04fe0001",
+      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_04fe0001-00590502.png",
+      "name": "Leonardo",
       "release": {
-        "au": "2016-12-03",
-        "eu": "2016-12-02",
-        "jp": "2016-12-01",
-        "na": "2016-12-02"
+        "au": "2015-10-03",
+        "eu": "2015-10-02",
+        "jp": "2015-07-30",
+        "na": "2015-09-25"
       },
-      "tail": "03500902",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Zelda",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01010000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01010000-03560902.png",
-      "name": "Zelda",
-      "release": {
-        "au": "2017-03-03",
-        "eu": "2017-03-03",
-        "jp": "2017-03-03",
-        "na": "2017-03-03"
-      },
-      "tail": "03560902",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Super Smash Bros.",
-      "character": "Link",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01000000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01000000-037c0002.png",
-      "name": "Young Link",
-      "release": {
-        "au": "2019-04-12",
-        "eu": "2019-04-12",
-        "jp": "2019-04-12",
-        "na": "2019-04-12"
-      },
-      "tail": "037c0002",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Midna",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01030000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01030000-024f0902.png",
-      "name": "Midna & Wolf Link",
-      "release": {
-        "au": "2016-03-05",
-        "eu": "2016-03-04",
-        "jp": "2016-03-10",
-        "na": "2016-03-04"
-      },
-      "tail": "024f0902",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Daruk",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01050000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01050000-03580902.png",
-      "name": "Daruk",
-      "release": {
-        "au": "2017-11-10",
-        "eu": "2017-11-10",
-        "jp": "2017-11-10",
-        "na": "2017-11-10"
-      },
-      "tail": "03580902",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Mipha",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01070000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01070000-035a0902.png",
-      "name": "Mipha",
-      "release": {
-        "au": "2017-11-10",
-        "eu": "2017-11-10",
-        "jp": "2017-11-10",
-        "na": "2017-11-10"
-      },
-      "tail": "035a0902",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Revali",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01080000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01080000-035b0902.png",
-      "name": "Revali",
-      "release": {
-        "au": "2017-11-10",
-        "eu": "2017-11-10",
-        "jp": "2017-11-10",
-        "na": "2017-11-10"
-      },
-      "tail": "035b0902",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Zelda",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01010000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01010000-03520902.png",
-      "name": "Toon Zelda - The Wind Waker",
-      "release": {
-        "au": "2016-12-03",
-        "eu": "2016-12-02",
-        "jp": "2016-12-01",
-        "na": "2016-12-02"
-      },
-      "tail": "03520902",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Link",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01000000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01000000-034d0902.png",
-      "name": "Link - Twilight Princess",
-      "release": {
-        "au": "2017-06-24",
-        "eu": "2017-06-23",
-        "jp": "2017-06-23",
-        "na": "2017-06-23"
-      },
-      "tail": "034d0902",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Ganon",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01020100",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01020100-041a0902.png",
-      "name": "Ganondorf - Tears of the Kingdom",
-      "release": {
-        "au": "2023-11-03",
-        "eu": "2023-11-03",
-        "jp": "2023-11-03",
-        "na": "2023-11-03"
-      },
-      "tail": "041a0902",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Link",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01000000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01000000-034b0902.png",
-      "name": "Link - Ocarina of Time",
-      "release": {
-        "au": "2016-12-03",
-        "eu": "2016-12-02",
-        "jp": "2016-12-01",
-        "na": "2016-12-02"
-      },
-      "tail": "034b0902",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Link",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01000000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01000000-034c0902.png",
-      "name": "Link - Majora's Mask",
-      "release": {
-        "au": "2017-06-24",
-        "eu": "2017-06-23",
-        "jp": "2017-06-23",
-        "na": "2017-06-23"
-      },
-      "tail": "034c0902",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Urbosa",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01060000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01060000-03590902.png",
-      "name": "Urbosa",
-      "release": {
-        "au": "2017-11-10",
-        "eu": "2017-11-10",
-        "jp": "2017-11-10",
-        "na": "2017-11-10"
-      },
-      "tail": "03590902",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Link",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01000000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01000000-03990902.png",
-      "name": "Link - Link's Awakening",
-      "release": {
-        "au": "2019-09-20",
-        "eu": "2019-09-20",
-        "jp": "2019-09-20",
-        "na": "2019-09-20"
-      },
-      "tail": "03990902",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Zelda",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01010000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01010000-04190902.png",
-      "name": "Zelda - Tears of the Kingdom",
-      "release": {
-        "au": "2023-11-03",
-        "eu": "2023-11-03",
-        "jp": "2023-11-03",
-        "na": "2023-11-03"
-      },
-      "tail": "04190902",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Link",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01000000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01000000-04180902.png",
-      "name": "Link - Tears of the Kingdom",
-      "release": {
-        "au": "2023-05-12",
-        "eu": "2023-05-12",
-        "jp": "2023-05-12",
-        "na": "2023-05-12"
-      },
-      "tail": "04180902",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Super Smash Bros.",
-      "character": "Link",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01000100",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01000100-00160002.png",
-      "name": "Toon Link",
-      "release": {
-        "au": "2015-01-29",
-        "eu": "2015-01-23",
-        "jp": "2015-01-22",
-        "na": "2015-02-01"
-      },
-      "tail": "00160002",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Legend Of Zelda",
-      "character": "Link",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01000000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01000000-034e0902.png",
-      "name": "Link - Skyward Sword",
-      "release": {
-        "au": "2017-06-24",
-        "eu": "2017-06-23",
-        "jp": "2017-06-23",
-        "na": "2017-06-23"
-      },
-      "tail": "034e0902",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Super Smash Bros.",
-      "character": "Zelda",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01010100",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01010100-00170002.png",
-      "name": "Sheik",
-      "release": {
-        "au": "2015-01-29",
-        "eu": "2015-01-23",
-        "jp": "2015-01-22",
-        "na": "2015-02-01"
-      },
-      "tail": "00170002",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Super Smash Bros.",
-      "character": "Ganon",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01020100",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01020100-001b0002.png",
-      "name": "Ganondorf",
-      "release": {
-        "au": "2015-07-04",
-        "eu": "2015-06-26",
-        "jp": "2015-06-11",
-        "na": "2015-09-11"
-      },
-      "tail": "001b0002",
-      "type": "Figure"
-    },
-    {
-      "amiiboSeries": "Super Smash Bros.",
-      "character": "Zelda",
-      "gameSeries": "The Legend of Zelda",
-      "head": "01010000",
-      "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01010000-000e0002.png",
-      "name": "Zelda",
-      "release": {
-        "au": "2014-12-12",
-        "eu": "2014-12-19",
-        "jp": "2014-12-06",
-        "na": "2014-12-14"
-      },
-      "tail": "000e0002",
-      "type": "Figure"
+      "tail": "00590502",
+      "type": "Card"
     }
   ]
 }
