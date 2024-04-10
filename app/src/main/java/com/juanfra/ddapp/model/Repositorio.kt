@@ -15,8 +15,6 @@ import java.io.IOException
 class Repositorio() {
 
     private val miRetrofit = RetrofitHelper.amiiboService
-
-    private var currentFragmentName: String = "Pamplona"
     private var currentPage: Int = 0
 
     
@@ -31,17 +29,12 @@ class Repositorio() {
     }
     fun getCurrentPage() = currentPage
 
-    fun setCurrentFragmentName(name: String) {
-        currentFragmentName = name
-    }
-    fun getCurrentFragmentName() = currentFragmentName
-
     suspend fun getGameseriesFromAPI(): Response<GameSeries> {
         return miRetrofit.obtenerGameSeries()
     }
 
-    suspend fun getAmiiboListFromApi(): Response<Amiibos> {
-        return miRetrofit.obtenerListaAmiibos()
+    suspend fun getAmiiboListFromApi(key: String): Response<Amiibos> {
+        return miRetrofit.obtenerListaAmiibos(key)
     }
 
 }

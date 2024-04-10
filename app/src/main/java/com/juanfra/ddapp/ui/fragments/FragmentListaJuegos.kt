@@ -27,7 +27,7 @@ class FragmentListaJuegos : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var repo = Repositorio()
-        viewModel.setFragmentName("Lista de amiibos")
+        viewModel.setFragmentName("Amiibos")
 
         viewModel.getGameSerieList().observe(requireActivity(), {
             updatervSeries(it, viewModel)

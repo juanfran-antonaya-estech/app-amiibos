@@ -23,22 +23,6 @@ class AmiiboModel() : ViewModel() {
         return seriesLiveData
     }
 
-    fun setList(array: ArrayList<GameSerie>) {
-
-        viewModelScope.launch {
-            val respuesta = repo.getGameseriesFromAPI()
-
-            val code = respuesta.code()
-
-            if (code == 200) {
-                val listaSeries = respuesta.body()
-                listaSeries?.let {
-                    seriesLiveData.postValue(it.gameSerie as ArrayList<GameSerie>)
-                }
-            }
-        }
-        downloadGameSeries()
-    }
     fun setDefaultList() {
         viewModelScope.launch {
             val respuesta = repo.getGameseriesFromAPI()
@@ -53,10 +37,6 @@ class AmiiboModel() : ViewModel() {
             }
         }
     }
-    fun downloadGameSeries() {
-// acciones para descargar la información de la serie
-        setDefaultList()
-    }
 
     fun initializeRepo(context: Context) {
         this.repo = Repositorio()
@@ -67,12 +47,10 @@ class AmiiboModel() : ViewModel() {
         return actualPageLiveData
     }
     fun getFragmentName() : LiveData<String> {
-        currentFragmentNameLiveData.value = repo.getCurrentFragmentName()
         return currentFragmentNameLiveData
     }
     fun setFragmentName(string: String) {
-        repo.setCurrentFragmentName(string)
-        currentFragmentNameLiveData.value = repo.getCurrentFragmentName()
+        currentFragmentNameLiveData.value = string
     }
 
     fun setPage(x : Int) {
@@ -94,33 +72,33 @@ class AmiiboModel() : ViewModel() {
             if (key.contains(',')) {
                 val keyarray = key.split(",")
                 val amiibolist = ArrayList<Amiibo>()
+                var contador = 0.0
+                val tamanioArray = keyarray.size.toDouble()
 
                 for (kee in keyarray){
-                    val response = repo.getAmiiboListFromApi()
+                    val response = repo.getAmiiboListFromApi(kee!!)
 
                     if (response.isSuccessful && response.code() == 200) {
+                        contador++
+                        val intcontador = contador.toInt()
+                        currentFragmentNameLiveData.postValue("Cargado ${intcontador} de ${keyarray.size} (${(contador / tamanioArray * 100).toInt()}%)")
                         amiibolist.addAll(response.body()!!.amiibo)
                     }
                 }
                 Log.d("la lista de amiibos", amiibolist.toString())
-                amiiboListLiveData.postValue(amiibolist)
+                currentFragmentNameLiveData.postValue("Mostrando amiibos de ${amiibolist.get(0)?.gameSeries}")
+                amiiboListLiveData.postValue(ArrayList(amiibolist.sortedBy { it.name }.sortedBy { it.type }))
             } else {
-                val response = repo.getAmiiboListFromApi()
+                val response = repo.getAmiiboListFromApi(key!!)
 
                 if (response.isSuccessful) {
                     if (response.code() == 200){
                         amiiboListLiveData.postValue(response.body()?.amiibo)
+                        currentFragmentNameLiveData.postValue("Mostrando amiibos de ${response.body()?.amiibo?.get(0)?.gameSeries}")
                     }
                 }
             }
         }
-    }
-    fun setAmiiboListFromMultipleKeys(keylist: List<String>) {
-
-    }
-
-    private fun updateAmiiboList() {
-
     }
 
     fun getAmiiboList(): MutableLiveData<ArrayList<Amiibo>> {
@@ -128,15 +106,10 @@ class AmiiboModel() : ViewModel() {
     }
 
     fun setAmiibo(amiibo: Amiibo) {
-
-    }
-
-    private fun updateAmiibo() {
-
+        amiiboLiveData.value = amiibo
     }
 
     fun getAmiibo(): MutableLiveData<Amiibo>{
-        updateAmiibo()
         return amiiboLiveData
     }
 
