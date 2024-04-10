@@ -6,8 +6,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import com.juanfra.ddapp.model.data.gameserieinfo.Amiibo
 import com.juanfra.ddapp.model.data.gameserieinfo.GameSerie
+import kotlinx.coroutines.launch
 
 class AmiiboModel() : ViewModel() {
     private lateinit var repo : Repositorio
@@ -22,20 +24,42 @@ class AmiiboModel() : ViewModel() {
     }
 
     fun setList(array: ArrayList<GameSerie>) {
-        repo.setCurrentGameSerieList(array)
+
+        viewModelScope.launch {
+            val respuesta = repo.getGameseriesFromAPI()
+
+            val code = respuesta.code()
+
+            if (code == 200) {
+                val listaSeries = respuesta.body()
+                listaSeries?.let {
+                    seriesLiveData.postValue(it.gameSerie as ArrayList<GameSerie>)
+                }
+            }
+        }
         downloadGameSeries()
     }
     fun setDefaultList() {
-        repo.setDefaultList()
-        downloadGameSeries()
+        viewModelScope.launch {
+            val respuesta = repo.getGameseriesFromAPI()
+
+            val code = respuesta.code()
+
+            if (code == 200) {
+                val listaSeries = respuesta.body()
+                listaSeries?.let {
+                    seriesLiveData.postValue(compressRepeats(it.gameSerie as ArrayList<GameSerie>)!!)
+                }
+            }
+        }
     }
     fun downloadGameSeries() {
 // acciones para descargar la información de la serie
-        seriesLiveData.value = repo.getCurrentGameSerieList()
+        setDefaultList()
     }
 
     fun initializeRepo(context: Context) {
-        this.repo = Repositorio(context)
+        this.repo = Repositorio()
     }
 
     fun getCurrentPage() : LiveData<Int> {
@@ -66,38 +90,49 @@ class AmiiboModel() : ViewModel() {
     }
 
     fun setAmiiboList(key: String) {
-        repo.setAmiiboList(key)
-        updateAmiiboList()
-    }
-    fun setAmiiboListFromMultipleKeys(keylist: List<String>) {
-        var amiiboarray = ArrayList<Amiibo>()
-        for(key in keylist){
-            for (amiibo in repo.getAmiiboList(key)!!){
-                amiiboarray.add(amiibo)
-                Log.d("amiibo", amiibo.toString())
-                Log.d("key", key)
+        viewModelScope.launch {
+            if (key.contains(',')) {
+                val keyarray = key.split(",")
+                val amiibolist = ArrayList<Amiibo>()
+
+                for (kee in keyarray){
+                    val response = repo.getAmiiboListFromApi()
+
+                    if (response.isSuccessful && response.code() == 200) {
+                        amiibolist.addAll(response.body()!!.amiibo)
+                    }
+                }
+                Log.d("la lista de amiibos", amiibolist.toString())
+                amiiboListLiveData.postValue(amiibolist)
+            } else {
+                val response = repo.getAmiiboListFromApi()
+
+                if (response.isSuccessful) {
+                    if (response.code() == 200){
+                        amiiboListLiveData.postValue(response.body()?.amiibo)
+                    }
+                }
             }
         }
-        repo.setAmiiboList(amiiboarray)
-        updateAmiiboList()
+    }
+    fun setAmiiboListFromMultipleKeys(keylist: List<String>) {
+
     }
 
     private fun updateAmiiboList() {
-        amiiboListLiveData.value = repo.getAmiiboList()
+
     }
 
     fun getAmiiboList(): MutableLiveData<ArrayList<Amiibo>> {
-        updateAmiiboList()
         return amiiboListLiveData
     }
 
     fun setAmiibo(amiibo: Amiibo) {
-        repo.setAmiibo(amiibo)
-        updateAmiibo()
+
     }
 
     private fun updateAmiibo() {
-        amiiboLiveData.value = repo.getAmiibo();
+
     }
 
     fun getAmiibo(): MutableLiveData<Amiibo>{
@@ -105,11 +140,42 @@ class AmiiboModel() : ViewModel() {
         return amiiboLiveData
     }
 
+    fun compressRepeats(gameSeries: ArrayList<GameSerie>): ArrayList<GameSerie>? {
+        val diffnames = getDiff(gameSeries)
 
+        val compressedlist = ArrayList<GameSerie>()
 
-    class AmiiboFactory(private val context: Context) : ViewModelProvider.Factory {
-        override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            return modelClass.getConstructor(Context::class.java).newInstance(context)
+        for(name in diffnames){
+            compressedlist.add(GameSerie("", name))
         }
+        for(cserie in compressedlist){
+            for (gserie in gameSeries) {
+                if (cserie.name.equals(gserie.name)) {
+                    cserie.key = cserie.key + ",${gserie.key}"
+                }
+            }
+            cserie.key = cserie.key!!.trim(',')
+        }
+
+        return compressedlist
     }
+
+    private fun getDiff(gameSeries: ArrayList<GameSerie>): ArrayList<String> {
+        val diffnames = arrayListOf<String>()
+
+        for(serie in gameSeries){
+            if (!diffnames.contains(serie.name)){
+                diffnames.add(serie.name!!)
+            }
+        }
+        return diffnames
+    }
+
+
+
+    //class AmiiboFactory(private val context: Context) : ViewModelProvider.Factory {
+    //    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+    //        return modelClass.getConstructor(Context::class.java).newInstance(context)
+    //    }
+    //}
 }

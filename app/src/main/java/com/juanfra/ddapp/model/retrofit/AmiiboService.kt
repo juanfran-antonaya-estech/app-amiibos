@@ -9,7 +9,7 @@ interface AmiiboService {
     @GET("api/gameseries/")
     suspend fun obtenerGameSeries() : Response<GameSeries>
 
-    @GET("api/amiibo/?gameseries=0x04f&showgames&showusage")
+    @GET("api/amiibo/?gameseries=0x010&showgames&showusage")
     suspend fun obtenerListaAmiibos() : Response<Amiibos>
 
 }
