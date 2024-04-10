@@ -5,5 +5,10 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.DDapp" parent="Base.Theme.DDapp" />
+    <style name="Theme.AmiiboApp" parent="Base.Theme.DDapp">
+        <item name="colorPrimary">@color/Primario</item>
+        <item name="colorPrimaryDark">@color/PrimarioDark</item>
+        <item name="colorAccent">@color/Acento</item>
+        <item name="android:fontFamily">@font/nova_mono</item>
+    </style>
 </resources>

@@ -39,7 +39,7 @@ class FragmentListaAmiibos : Fragment() {
         val adaptador = AdaptadorListaAmiibos(ArrayList(amiibos!!.sortedBy { it.name }))
         adaptador.obtainViewModel(viewModel)
         adaptador.updateData()
-        val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        val layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
         binding.rvListaAmiibos.adapter = adaptador
         binding.rvListaAmiibos.layoutManager = layoutManager
         adaptador.updateData()

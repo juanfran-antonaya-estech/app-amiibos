@@ -32,7 +32,7 @@ class AmiiboModel() : ViewModel() {
             if (code == 200) {
                 val listaSeries = respuesta.body()
                 listaSeries?.let {
-                    seriesLiveData.postValue(compressRepeats(it.gameSerie as ArrayList<GameSerie>)!!)
+                    seriesLiveData.postValue(ArrayList(compressRepeats(it.gameSerie as ArrayList<GameSerie>)!!.sortedBy { it.name }))
                 }
             }
         }
