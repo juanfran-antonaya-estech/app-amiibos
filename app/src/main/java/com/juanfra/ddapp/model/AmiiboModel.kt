@@ -8,6 +8,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.juanfra.ddapp.model.data.gameserieinfo.Amiibo
 import com.juanfra.ddapp.model.data.gameserieinfo.GameSerie
+import kotlinx.coroutines.delay
+import java.util.Collections
 
 class AmiiboModel() : ViewModel() {
     private lateinit var repo : Repositorio
@@ -71,12 +73,9 @@ class AmiiboModel() : ViewModel() {
     }
     fun setAmiiboListFromMultipleKeys(keylist: List<String>) {
         var amiiboarray = ArrayList<Amiibo>()
-        for(key in keylist){
-            for (amiibo in repo.getAmiiboList(key)!!){
-                amiiboarray.add(amiibo)
-                Log.d("amiibo", amiibo.toString())
-                Log.d("key", key)
-            }
+        for (key in keylist) {
+            repo.getAmiiboList(key)?.toCollection(amiiboarray)
+            Log.d("la lista", amiiboarray.toString())
         }
         repo.setAmiiboList(amiiboarray)
         updateAmiiboList()

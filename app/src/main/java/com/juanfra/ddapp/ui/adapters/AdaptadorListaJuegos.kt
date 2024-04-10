@@ -47,7 +47,7 @@ class AdaptadorListaJuegos (val listado: ArrayList<GameSerie>) : RecyclerView.Ad
                     n++
                 }*/
 
-                viewModel.setAmiiboListFromMultipleKeys(serie.key!!.split(','))
+                viewModel.setAmiiboListFromMultipleKeys(serie.key!!.split(',').map { it.trim() })
                 viewModel.setPage(1)
             }
         } else {
